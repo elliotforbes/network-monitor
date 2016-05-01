@@ -8,9 +8,10 @@ import (
     "github.com/gorilla/mux"
 )
 
+const Version = "0.0.1"
+
 func showVersion(w http.ResponseWriter, r *http.Request) {
-    fmt.Println("Version 0.0.1")
-    fmt.Fprintf(w, "Version 0.0.1")
+    fmt.Println("Version " + Version)
 }
 
 func bruteForce(w http.ResponseWriter, r *http.Request) {

@@ -25,7 +25,7 @@ func getLocalIp(w http.ResponseWriter, r *http.Request){
                 
         for _, addr := range addrs {
             var ip net.IP
-                     
+                        
             switch v := addr.(type) {
             case *net.IPNet:
                     ip = v.IP
@@ -35,6 +35,7 @@ func getLocalIp(w http.ResponseWriter, r *http.Request){
             // process IP address
             if ip != nil {
                 fmt.Println(ip.String())
+                fmt.Println(ip.IsMulticast())
             }
         }
     }
