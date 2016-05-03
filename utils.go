@@ -22,10 +22,12 @@ func getLocalIp(w http.ResponseWriter, r *http.Request){
         if err != nil {
             log.Fatal(err)
         }
-                
+        
         for _, addr := range addrs {
             var ip net.IP
-                        
+            
+            fmt.Println(addr.Network())
+                               
             switch v := addr.(type) {
             case *net.IPNet:
                     ip = v.IP
